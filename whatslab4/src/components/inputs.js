@@ -6,8 +6,8 @@ class Inputs extends React.Component{
     mensagem: [{
 
     }],
-    valorInputUsuario: '',
-    valorInputMensagem: ''
+    valorInputUsuario: "",
+    valorInputMensagem: "",
   }
 
   adicionaMensagem = () => {
@@ -23,6 +23,7 @@ class Inputs extends React.Component{
   };
 
   onChangeinputUsuario = (event) => {
+    console.log(event.target.value)
     this.setState({valorInputUsuario: event.target.value})
   }
 
