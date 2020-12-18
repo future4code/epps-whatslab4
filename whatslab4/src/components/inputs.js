@@ -21,11 +21,27 @@ class Inputs extends React.Component{
       ...this.state.mensagem, novaMensagem
     ];
     this.setState({ mensagem: novoMensagem})
+
+   
+   
   };
   onKeyUpEnter = (event) =>{
     if(event.key === "Enter" ){
       this.adicionaMensagem()
     }
+  }
+
+  deletaMensagem = () =>{
+    const deletaMensagem = {
+      // usuario: "",
+      mensagem: ""
+    }
+
+    const novoMensagem = [
+       deletaMensagem, ...this.state.mensagem,
+    ]
+
+    this.setState({mensagem: novoMensagem})
   }
 
   onChangeinputUsuario = (event) => {
@@ -60,7 +76,7 @@ class Inputs extends React.Component{
             />
             <Botao type="submit" onClick={this.adicionaMensagem}>Enviar mensagem</Botao>
           </div>
-          <ContainerMensagens>{listaMensagens}</ContainerMensagens>
+          <ContainerMensagens onDoubleClick={this.deletaMensagem}>{listaMensagens}</ContainerMensagens>
       
       </Container>
     )
