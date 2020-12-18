@@ -1,4 +1,5 @@
 import React from "react"
+import {InputUsuario, InputMensagem, Botao, Container, ContainerInputs} from "./styles/Styles.js";
 
 class Inputs extends React.Component{
 
@@ -38,22 +39,22 @@ class Inputs extends React.Component{
     })
 
     return(
-      <div>
-        <div>
-          <input 
+      <Container>
+        <ContainerInputs>
+          <InputUsuario
             placeholder={"Nome"}
             value={this.state.valorInputUsuario}
             onChange={this.onChangeinputUsuario}
           />
-          <input 
+          <InputMensagem 
             placeholder={'Mensagem'}
             value={this.state.valorInputMensagem}
             onChange={this.onChangeinputMensagem} 
           />
-          <button onClick={this.adicionaMensagem}>Enviar mensagem</button>
-        </div>
+          <Botao onClick={this.adicionaMensagem}>Enviar mensagem</Botao>
+        </ContainerInputs>
         <div>{listaMensagens}</div>
-      </div>
+      </Container>
     )
   }
 }
