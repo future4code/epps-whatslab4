@@ -3,9 +3,8 @@ import React from "react"
 class Inputs extends React.Component{
 
   state = {
-    mensagem: [{
-
-    }],
+    mensagem: [
+  ],
     valorInputUsuario: "",
     valorInputMensagem: "",
   }
@@ -17,7 +16,7 @@ class Inputs extends React.Component{
     }
 
     const novoMensagem = [
-      ...this.setState.mensagem, novaMensagem
+      ...this.state.mensagem, novaMensagem
     ];
     this.setState({ mensagem: novoMensagem})
   };
@@ -34,9 +33,7 @@ class Inputs extends React.Component{
   render(){
     const listaMensagens = this.state.mensagem.map((novaMensagem) => {
       return (
-        <p>
-          {novaMensagem.usuario}
-        </p>
+          <p>{novaMensagem.usuario}: {novaMensagem.mensagem}</p>        
       )
     })
 
@@ -46,12 +43,12 @@ class Inputs extends React.Component{
           <input 
             placeholder={"Nome"}
             value={this.state.valorInputUsuario}
-            onChange={this.state.onChangeinputUsuario}
+            onChange={this.onChangeinputUsuario}
           />
           <input 
             placeholder={'Mensagem'}
             value={this.state.valorInputMensagem}
-            onChange={this.state.onChangeinputMensagem} 
+            onChange={this.onChangeinputMensagem} 
           />
           <button onClick={this.adicionaMensagem}>Enviar mensagem</button>
         </div>
