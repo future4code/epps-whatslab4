@@ -22,9 +22,13 @@ class Inputs extends React.Component{
     ];
     this.setState({ mensagem: novoMensagem})
   };
+  onKeyUpEnter = (event) =>{
+    if(event.key === "Enter" ){
+      this.adicionaMensagem()
+    }
+  }
 
   onChangeinputUsuario = (event) => {
-    console.log(event.target.value)
     this.setState({valorInputUsuario: event.target.value})
   }
 
@@ -51,8 +55,9 @@ class Inputs extends React.Component{
               placeholder={'Mensagem'}
               value={this.state.valorInputMensagem}
               onChange={this.onChangeinputMensagem} 
+              onKeyPress={this.onKeyUpEnter}
             />
-            <Botao onClick={this.adicionaMensagem}>Enviar mensagem</Botao>
+            <Botao type="submit" onClick={this.adicionaMensagem}>Enviar mensagem</Botao>
           </div>
           <ContainerMensagens>{listaMensagens}</ContainerMensagens>
       
