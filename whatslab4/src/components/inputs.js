@@ -39,7 +39,8 @@ class Inputs extends React.Component{
   render(){
     const listaMensagens = this.state.mensagem.map((novaMensagem) => {
       return (
-          <p> <b>{novaMensagem.usuario}:</b> {novaMensagem.mensagem}</p>        
+          <p key={novaMensagem}><b>{novaMensagem.usuario}:</b> {novaMensagem.mensagem}</p>  
+            
       )
     })
 
