@@ -1,5 +1,6 @@
 import React from "react"
-import {InputUsuario, InputMensagem, Botao, Container, ContainerInputs} from "./styles/Styles.js";
+import {InputUsuario, InputMensagem, Botao, Container, ContainerMensagens} from "./styles/Styles.js"
+
 
 class Inputs extends React.Component{
 
@@ -34,26 +35,27 @@ class Inputs extends React.Component{
   render(){
     const listaMensagens = this.state.mensagem.map((novaMensagem) => {
       return (
-          <p>{novaMensagem.usuario}: {novaMensagem.mensagem}</p>        
+          <p> <b>{novaMensagem.usuario}:</b> {novaMensagem.mensagem}</p>        
       )
     })
 
     return(
       <Container>
-        <ContainerInputs>
-          <InputUsuario
-            placeholder={"Nome"}
-            value={this.state.valorInputUsuario}
-            onChange={this.onChangeinputUsuario}
-          />
-          <InputMensagem 
-            placeholder={'Mensagem'}
-            value={this.state.valorInputMensagem}
-            onChange={this.onChangeinputMensagem} 
-          />
-          <Botao onClick={this.adicionaMensagem}>Enviar mensagem</Botao>
-        </ContainerInputs>
-        <div>{listaMensagens}</div>
+          <div>
+            <InputUsuario
+              placeholder={"Nome"}
+              value={this.state.valorInputUsuario}
+              onChange={this.onChangeinputUsuario}
+            />
+            <InputMensagem 
+              placeholder={'Mensagem'}
+              value={this.state.valorInputMensagem}
+              onChange={this.onChangeinputMensagem} 
+            />
+            <Botao onClick={this.adicionaMensagem}>Enviar mensagem</Botao>
+          </div>
+          <ContainerMensagens>{listaMensagens}</ContainerMensagens>
+      
       </Container>
     )
   }

@@ -9,6 +9,7 @@ const InputUsuario = styled.input`
     width: 100px;
     padding: 8px;
     outline: none;
+    
 `
 
 const InputMensagem = styled.input`
@@ -41,13 +42,20 @@ const Container = styled.div`
     width: 960px;
     margin: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column-reverse;
+
 
 `
 
-const ContainerInputs = styled.div`
+const ContainerMensagens = styled.div`
+    width: 670px;
+    margin: 0 auto;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: baseline;  
 `
 
-export {InputUsuario, InputMensagem, Botao, Container, ContainerInputs}
+
+
+
+export {InputUsuario, InputMensagem, Botao, Container, ContainerMensagens}
